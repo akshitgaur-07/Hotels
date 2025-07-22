@@ -81,6 +81,8 @@ const db = require('./db');
 
 const bodyparser = require('body-parser');
 app.use(bodyparser.json()); // it stores in req.body
+require('dotenv').config();
+const PORT = process.env.PORT || 3000;
 
 
 app.get('/', (req, res) => {
@@ -98,6 +100,6 @@ app.use('/menu', menuRoutes);
 
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('Listening on port 3000');
 });
